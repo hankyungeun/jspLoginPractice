@@ -1,0 +1,12 @@
+@charset "UTF-8";
+html, body { height:100%; background-color: #fee1e8; }
+main { display:flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;}
+h1 { color: white; text-shadow: 10px 5px 10px #ff968a;}
+a { display: inline-block; height: 40px; width: 30%;
+    background-color: #f3b0c3; border-radius: 30em; padding: 1em; margin: 1em;
+    color: white; text-decoration: none; font-size: 20px; font-weight: 600;
+    box-shadow: 5px 5px 10px #ec5d86; text-align: center;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */}
+a:hover {background-color: #b2b3e0; box-shadow: 5px 5px 10px #8688f8;}
