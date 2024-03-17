@@ -17,23 +17,21 @@ public class LoginController extends HttpServlet {
 
         request.setCharacterEncoding("UTF-8");
 
-        String userId = request.getParameter("userId");
-        String userPwd = request.getParameter("userPwd");
+        String userId = request.getParameter("id");
+        String userPwd = request.getParameter("passwd");
 
         Member loginUser = new MemberService().loginMember(userId,userPwd);
 
 
         if(loginUser == null) {
-            request.setAttribute("errorMsg", "로그인에 실패했습니다.");
-
-            RequestDispatcher view = request.getRequestDispatcher("views/common/errorPage.jsp");
-            // request, response 객체 포워딩
+            RequestDispatcher view = request.getRequestDispatcher("views/errorPage.jsp");
             view.forward(request, response);
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("loginUser",loginUser);
 
-            response.sendRedirect(request.getContextPath());
+            RequestDispatcher view = request.getRequestDispatcher("views/loginSuccess.jsp");
+            view.forward(request, response);
         }
 
 

@@ -3,6 +3,6 @@
 <properties>
     <entry key="login">
         SELECT * FROM MEMBER
-        WHERE USER_ID = ? AND USER_PWD = ?
+        WHERE ID = ? AND PASSWD = ?
     </entry>
 </properties>

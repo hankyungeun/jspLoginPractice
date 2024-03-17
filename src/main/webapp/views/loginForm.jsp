@@ -12,8 +12,8 @@
     <h1>Happy Day</h1>
     <div class="login">
         <form action="/Practice01/login" method="get">
-            <input type="text" placeholder="아이디">
-            <input type="password" placeholder="비밀번호">
+            <input type="text" name="id" placeholder="아이디">
+            <input type="password" name="passwd" placeholder="비밀번호">
             <button type="submit">로그인</button>
         </form>
     </div>

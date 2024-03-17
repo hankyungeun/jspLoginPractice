@@ -24,7 +24,7 @@ public class MemberDao {
         }
     }
 
-    public Member loginMember(Connection conn, String userId, String userPwd) {
+    public Member loginMember(Connection conn, String id, String passwd) {
         Member loginUser = null;
         PreparedStatement pstmt = null;
         ResultSet rset = null;
@@ -34,8 +34,8 @@ public class MemberDao {
         try {
             pstmt = conn.prepareStatement(sql);
 
-            pstmt.setString(1, userId);
-            pstmt.setString(2, userPwd);
+            pstmt.setString(1, id);
+            pstmt.setString(2, passwd);
 
             rset = pstmt.executeQuery();
             // => 조회 결과가 있으면 한 행이 반환 또는 조회 결과가 없으면 아무것도 반환되지 않을 것임
@@ -59,31 +59,23 @@ public class MemberDao {
     }
 
     public int insertMember(Connection conn, Member m) {
-        // DML(insert) => 처리된 행수 => 트랜잭션 처리
         int result = 0;
-
-        // 미완성 sql문 사용 => PreparedStatement 객체
         PreparedStatement pstmt = null;
 
         String sql = prop.getProperty("insertMember");
 
         try {
-
-            // PreparedStatement 객체 생성
             pstmt = conn.prepareStatement(sql);
 
-            // sql문 완성하기 => ? 위치를 채워주기
             pstmt.setString(1, m.getId());
             pstmt.setString(2, m.getPasswd());
             pstmt.setString(3, m.getName());
             pstmt.setString(4, m.getPhone());
 
-            // sql문 실행 후 결과 저장
             result = pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // PreparedStatement 객체 반납
             close(pstmt);
         }
 
