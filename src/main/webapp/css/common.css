@@ -11,5 +11,13 @@ a { display: inline-block; height: 50px; width: 25%;
     align-items: center; /* 수직 가운데 정렬 */}
 a:hover {background-color: #b2b3e0; box-shadow: 5px 5px 10px #8688f8;}
 .login input{
-    border: #f3b0c3 solid 2px;
+    margin-bottom: 10px;
+    border-radius: 30px; border: #f3b0c3 solid 2px;
+    height: 55px; width: 400px;
+    text-align: center;
+}
+button{
+    color: white; background-color: #f3b0c3; text-align: center;
+    border-radius: 30px; border: #f3b0c3 solid 2px;
+    height: 55px; width: 400px;
 }

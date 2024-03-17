@@ -7,6 +7,8 @@
 <title>Error Page</title>
 </head>
 <body>
+<main>
 	잘못된 정보입니다.
+</main>
 </body>
 </html>

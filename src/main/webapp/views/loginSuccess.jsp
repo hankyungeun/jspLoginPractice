@@ -10,6 +10,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<main>
 <%=loginUser.getName()%>님, 로그인에 성공했습니다.
+</main>
 </body>
 </html>

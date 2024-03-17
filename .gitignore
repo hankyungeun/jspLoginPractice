@@ -123,5 +123,6 @@ $RECYCLE.BIN/
 META-INF
 
 *.idea
+classes
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,eclipse,java
